@@ -1,0 +1,5 @@
+<ul class="board-index">
+  <% boards.each(function (board) { %>
+    <li class="board-list-item"> <%= board.escape('title') %> </li>
+  <% }) %>
+</ul>
