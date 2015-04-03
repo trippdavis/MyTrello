@@ -1,0 +1,11 @@
+<h2><%= board.escape('title') %></h2>
+
+<ul class="list-index">
+  <% lists.forEach(function (list) { %>
+    <li class="list-list-item">
+      <%= list.title %>
+    </li>
+  <% }) %>
+</ul>
+
+<a href="#/">Back to Boards</a>
