@@ -5,9 +5,9 @@ b1 = u1.boards.create(title: 'Workout')
 b2 = u1.boards.create(title: 'Jamaica')
 b3 = u2.boards.create(title: 'Bouncy')
 
-l1 = b1.lists.create(title: 'todo')
-l2 = b1.lists.create(title: 'doing')
-l3 = b1.lists.create(title: 'done')
+l1 = b1.lists.create(title: 'todo', ord: 1.0)
+l2 = b1.lists.create(title: 'doing', ord: 3.0)
+l3 = b1.lists.create(title: 'done', ord: 2.0)
 
 c1 = l3.cards.create(title: 'squats', description: 'feel the burn')
 c2 = l3.cards.create(title: 'pushups', description: 'ooh ouch')

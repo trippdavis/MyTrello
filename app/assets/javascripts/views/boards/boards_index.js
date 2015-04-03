@@ -27,6 +27,7 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
     board.save({}, {
       success: function () {
         this.collection.add(board);
+        Backbone.history.navigate("api/boards/" + board.id, { trigger: true });
       }.bind(this)
     });
   }
