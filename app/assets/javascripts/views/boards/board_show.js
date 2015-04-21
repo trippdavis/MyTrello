@@ -1,5 +1,5 @@
 TrelloClone.Views.BoardShow = Backbone.View.extend({
-  initialize: function (options) {
+  initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "sync add remove", this.render);
   },
@@ -8,10 +8,12 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     "click .list-form-button": "newList"
   },
 
+  className: "board-show col-md-12",
+
   template: JST["boards/show"],
 
   render: function () {
-    var content = this.template({ board: this.model, lists: this.collection });
+    var content = this.template({ board: this.model });
     this.$el.html(content);
     this.collection.each(function (list) {
       this.listShow(list);
@@ -34,6 +36,8 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     list.set('board_id', this.model.id);
     list.save({}, {
       success: function () {
+        debugger
+        // list does not get added to board!!
         this.collection.add(list);
       }.bind(this)
     });
